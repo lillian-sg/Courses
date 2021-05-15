@@ -13,6 +13,11 @@
 		385EB36C2646ABDE00254A4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385EB36A2646ABDE00254A4C /* Main.storyboard */; };
 		385EB36E2646ABE200254A4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385EB36D2646ABE200254A4C /* Assets.xcassets */; };
 		385EB3712646ABE200254A4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385EB36F2646ABE200254A4C /* LaunchScreen.storyboard */; };
+		385EB37B2646AFA800254A4C /* CursoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385EB3792646AFA800254A4C /* CursoTableViewCell.swift */; };
+		385EB37C2646AFA800254A4C /* CursoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385EB37A2646AFA800254A4C /* CursoTableViewCell.xib */; };
+		38B8C5F5264FFAA800F531B1 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C5F4264FFAA800F531B1 /* Course.swift */; };
+		38B8C5F9265005F600F531B1 /* CourseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C5F8265005F600F531B1 /* CourseNetwork.swift */; };
+		38B8C5FD26501B7E00F531B1 /* AddCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38B8C5FC26501B7E00F531B1 /* AddCourseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		385EB36D2646ABE200254A4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		385EB3702646ABE200254A4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		385EB3722646ABE200254A4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		385EB3792646AFA800254A4C /* CursoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CursoTableViewCell.swift; sourceTree = "<group>"; };
+		385EB37A2646AFA800254A4C /* CursoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CursoTableViewCell.xib; sourceTree = "<group>"; };
+		38B8C5F4264FFAA800F531B1 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		38B8C5F8265005F600F531B1 /* CourseNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseNetwork.swift; sourceTree = "<group>"; };
+		38B8C5FC26501B7E00F531B1 /* AddCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,36 @@
 		385EB3632646ABDE00254A4C /* Cursos */ = {
 			isa = PBXGroup;
 			children = (
+				38B8C5FB26501B3E00F531B1 /* Controllers */,
 				385EB3642646ABDE00254A4C /* AppDelegate.swift */,
 				385EB3662646ABDE00254A4C /* SceneDelegate.swift */,
-				385EB3682646ABDE00254A4C /* ViewController.swift */,
 				385EB36A2646ABDE00254A4C /* Main.storyboard */,
+				385EB3792646AFA800254A4C /* CursoTableViewCell.swift */,
+				385EB37A2646AFA800254A4C /* CursoTableViewCell.xib */,
 				385EB36D2646ABE200254A4C /* Assets.xcassets */,
 				385EB36F2646ABE200254A4C /* LaunchScreen.storyboard */,
 				385EB3722646ABE200254A4C /* Info.plist */,
+				38B8C5F3264FFA7300F531B1 /* Models */,
 			);
 			path = Cursos;
+			sourceTree = "<group>";
+		};
+		38B8C5F3264FFA7300F531B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				38B8C5F4264FFAA800F531B1 /* Course.swift */,
+				38B8C5F8265005F600F531B1 /* CourseNetwork.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		38B8C5FB26501B3E00F531B1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				385EB3682646ABDE00254A4C /* ViewController.swift */,
+				38B8C5FC26501B7E00F531B1 /* AddCourseViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +157,7 @@
 			files = (
 				385EB3712646ABE200254A4C /* LaunchScreen.storyboard in Resources */,
 				385EB36E2646ABE200254A4C /* Assets.xcassets in Resources */,
+				385EB37C2646AFA800254A4C /* CursoTableViewCell.xib in Resources */,
 				385EB36C2646ABDE00254A4C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +170,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				385EB3692646ABDE00254A4C /* ViewController.swift in Sources */,
+				38B8C5F9265005F600F531B1 /* CourseNetwork.swift in Sources */,
 				385EB3652646ABDE00254A4C /* AppDelegate.swift in Sources */,
+				38B8C5F5264FFAA800F531B1 /* Course.swift in Sources */,
+				38B8C5FD26501B7E00F531B1 /* AddCourseViewController.swift in Sources */,
+				385EB37B2646AFA800254A4C /* CursoTableViewCell.swift in Sources */,
 				385EB3672646ABDE00254A4C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
