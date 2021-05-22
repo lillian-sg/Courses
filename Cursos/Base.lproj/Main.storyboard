@@ -31,10 +31,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5FF-oZ-M56">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ycq-cZ-vKX"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="f19-iK-jpc">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="add" destination="BYZ-38-t0r" id="Cai-Ng-S10"/>
+                                <segue destination="jLI-yB-UEl" kind="show" id="I9O-Ed-Wth"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -46,20 +48,72 @@
             </objects>
             <point key="canvasLocation" x="1207.2" y="24.7376311844078"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Course View Controller-->
         <scene sceneID="13e-X0-365">
             <objects>
-                <viewController id="jLI-yB-UEl" sceneMemberID="viewController">
+                <viewController id="jLI-yB-UEl" customClass="AddCourseViewController" customModule="Cursos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="95Q-4I-v9z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o nome do curso" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HQf-oq-M1e">
+                                <rect key="frame" x="16" y="94" width="319" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGX-uR-g3l">
+                                <rect key="frame" x="16" y="575" width="343" height="42"/>
+                                <color key="backgroundColor" red="0.92570191619999997" green="0.24899262189999999" blue="0.49495995040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="8yC-3f-krg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                <state key="normal" title="ADICIONAR">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addCourse" destination="jLI-yB-UEl" eventType="touchUpInside" id="gP9-dQ-uRa"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o nível do curso" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jj4-px-fkz">
+                                <rect key="frame" x="16" y="158" width="319" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="286-s4-KHq">
+                                <rect key="frame" x="169" y="577.5" width="37" height="37"/>
+                                <color key="tintColor" systemColor="systemGray3Color"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6oF-Pr-DMV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6oF-Pr-DMV" firstAttribute="trailing" secondItem="Jj4-px-fkz" secondAttribute="trailing" constant="40" id="86s-SN-fXL"/>
+                            <constraint firstItem="6oF-Pr-DMV" firstAttribute="trailing" secondItem="lGX-uR-g3l" secondAttribute="trailing" constant="16" id="LMY-ei-Wip"/>
+                            <constraint firstItem="6oF-Pr-DMV" firstAttribute="trailing" secondItem="HQf-oq-M1e" secondAttribute="trailing" constant="40" id="ROT-Ic-UgH"/>
+                            <constraint firstItem="286-s4-KHq" firstAttribute="centerX" secondItem="lGX-uR-g3l" secondAttribute="centerX" id="V6g-B2-sxY"/>
+                            <constraint firstItem="6oF-Pr-DMV" firstAttribute="bottom" secondItem="lGX-uR-g3l" secondAttribute="bottom" constant="50" id="Wlx-Ew-Zeb"/>
+                            <constraint firstItem="286-s4-KHq" firstAttribute="centerY" secondItem="lGX-uR-g3l" secondAttribute="centerY" id="aJV-8X-bnQ"/>
+                            <constraint firstItem="HQf-oq-M1e" firstAttribute="leading" secondItem="6oF-Pr-DMV" secondAttribute="leading" constant="16" id="c2O-eU-qXp"/>
+                            <constraint firstItem="286-s4-KHq" firstAttribute="centerY" secondItem="lGX-uR-g3l" secondAttribute="centerY" id="e4e-ZT-jTU"/>
+                            <constraint firstItem="Jj4-px-fkz" firstAttribute="top" secondItem="HQf-oq-M1e" secondAttribute="bottom" constant="30" id="eh2-Ta-WUd"/>
+                            <constraint firstItem="Jj4-px-fkz" firstAttribute="leading" secondItem="6oF-Pr-DMV" secondAttribute="leading" constant="16" id="lAY-4D-hlO"/>
+                            <constraint firstItem="lGX-uR-g3l" firstAttribute="leading" secondItem="6oF-Pr-DMV" secondAttribute="leading" constant="16" id="r34-2C-v0n"/>
+                            <constraint firstItem="HQf-oq-M1e" firstAttribute="top" secondItem="6oF-Pr-DMV" secondAttribute="top" constant="50" id="sAN-UH-cH1"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="fEr-66-4Qx"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="286-s4-KHq" id="dfF-5f-g7F"/>
+                        <outlet property="addButton" destination="lGX-uR-g3l" id="68U-eu-XIv"/>
+                        <outlet property="courseLevelTextField" destination="Jj4-px-fkz" id="sLs-Xb-Owa"/>
+                        <outlet property="courseNameTextField" destination="HQf-oq-M1e" id="hoG-Nv-Paf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fh2-w7-16I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2007" y="25"/>
+            <point key="canvasLocation" x="2005.5999999999999" y="24.7376311844078"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qpx-lI-AA9">
@@ -69,7 +123,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="99d-1p-CUg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" systemColor="systemPinkColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.92570191619999997" green="0.24899262189999999" blue="0.49495995040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -81,12 +142,13 @@
             <point key="canvasLocation" x="268" y="24.7376311844078"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
