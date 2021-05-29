@@ -89,6 +89,21 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 200
     }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Deletar") { (action, view, boolValue) in
+            print("delete")
+        }
+        let edit = UIContextualAction(style: .normal, title: "Editar") { (action, view, boolValue) in
+            print("editando")
+        }
+        let configuration = UISwipeActionsConfiguration(actions: [delete, edit])
+        return configuration
+    }
+  
+    
 }
 
 extension ViewController: AddCourseViewControllerDelegate {
