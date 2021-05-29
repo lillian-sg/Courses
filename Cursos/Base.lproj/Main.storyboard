@@ -35,13 +35,13 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="f19-iK-jpc">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="add" destination="BYZ-38-t0r" id="Cai-Ng-S10"/>
-                                <segue destination="jLI-yB-UEl" kind="show" id="I9O-Ed-Wth"/>
+                                <action selector="addCourse:" destination="BYZ-38-t0r" id="c9h-EY-S70"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="jEu-SE-akf" id="ds3-Xk-WR4"/>
+                        <segue destination="jLI-yB-UEl" kind="show" identifier="addCourse" id="nnP-8p-tMS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

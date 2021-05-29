@@ -37,4 +37,35 @@ class CourseNetwork {
             }
         }.resume()
     }
+    
+    func save(course: Course, completion: @escaping(Result<Course, Error>) -> Void) {
+        let fullUrl = baseURL + path
+        guard let url = URL(string: fullUrl) else {return}
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(course) {
+            urlRequest.httpBody = encoded
+        }
+        
+        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            do{
+                guard let data = data, let _ = response, error == nil else {
+                    completion(.failure(NSError()))
+                    return
+                }
+                let json = try JSONSerialization.jsonObject(with: data, options: [.allowFragments])
+                print(json)
+                
+                let courseResponse = try JSONDecoder().decode(Course.self, from: data)
+                completion(.success(courseResponse))
+            } catch {
+                print("Error do network", error)
+                completion(.failure(error))
+            }
+        }.resume()
+    }
 }

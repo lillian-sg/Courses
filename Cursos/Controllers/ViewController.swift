@@ -8,11 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
 
     @IBOutlet weak var tableView: UITableView!
     
-    var courseNetwork = CourseNetwork()
-    var courses: [Course] = []
+   private var courseNetwork = CourseNetwork()
+   private var courses: [Course] = []
     
     let cursoCellNameAndIdentifier = "CursoTableViewCell"
     
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
                 print(error)
             }
         }
+    
         
     }
     
@@ -41,8 +43,13 @@ class ViewController: UIViewController {
         tableView.delegate = self
     }
     
-
-    @IBAction func add() {
+    @IBAction func addCourse(_ sender: Any) {
+        self.performSegue(withIdentifier: "addCourse", sender: nil)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let addCourseVC = segue.destination as? AddCourseViewController {
+            addCourseVC.delegate = self
+        }
     }
 }
 
@@ -82,4 +89,16 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 200
     }
+}
+
+extension ViewController: AddCourseViewControllerDelegate {
+    func update(course: Course) {
+        courses += [course]
+        tableView.reloadData()
+        let row = courses.count - 1
+        let section = tableView.numberOfSections - 1
+        let indexPath = IndexPath(row: row, section: section)
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
+    
 }
