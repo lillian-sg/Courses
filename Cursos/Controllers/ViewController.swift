@@ -73,11 +73,11 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: .zero)
-        let image = UIImage(named: "Capa1")
+        let image = UIImage(named: "CAPA")
         let imageViewFrame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 200)
         let imageView = UIImageView(frame: imageViewFrame)
         imageView.image = image
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         view.addSubview(imageView)
         
         return view
