@@ -97,7 +97,11 @@ extension ViewController: UITableViewDelegate {
             print("delete")
         }
         let edit = UIContextualAction(style: .normal, title: "Editar") { (action, view, boolValue) in
+            
             print("editando")
+            print(self.courses[indexPath.row])
+            print(indexPath.row)
+            
         }
         let configuration = UISwipeActionsConfiguration(actions: [delete, edit])
         return configuration
